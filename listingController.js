@@ -5,10 +5,34 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     /* 
       Implement these functions in the controller to make your application function 
-      as described in the assignment spec. 
+      as described in the assignment spec.
      */
-    $scope.addListing = function() {};
-    $scope.deleteListing = function(index) {};
-    $scope.showDetails = function(index) {};
+
+    $scope.itemToAdd = {
+      code: "",
+      name: "",
+      coordinates: {
+        latitude: 0,
+        longitude: 0
+      },
+      address: ""
+    }
+
+
+    $scope.addListing = function() {
+      var adder = {};
+      adder.name = ;
+
+
+    };
+
+    $scope.deleteListing = function(index) {
+      $scope.listings.splice(index, 1);
+    };
+
+    $scope.showDetails = function(index) {
+
+    };
+
   }
 ]);

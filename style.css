@@ -2,6 +2,16 @@
   margin: 15px 10px;
 }
 
+.jumbotron {
+   padding: 30px;
+   margin-bottom: 30px;
+   font-size: 21px;
+   font-weight: 200;
+   line-height: 2.1428571435;
+   color: inherit;
+   background-color: #0080FF !important;
+}
+
 .tableWrapper {
   max-height: 400px;
   overflow: auto;

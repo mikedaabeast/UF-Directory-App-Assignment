@@ -7,7 +7,15 @@
   <body ng-app="directoryApp">
     <div class="container">
       <div class="row">
-        <h1>UF Directory App</h1>
+
+        <div class="jumbotron">
+          <h1>UF Directory App</h1>
+          <!--
+            <p>...</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+          -->
+        </div>
+
       </div>
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
@@ -17,30 +25,75 @@
                 Implement a way to filter through listings using the search bar 
 
               -->
+
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search">
+
           </div>
           <div class="tableWrapper">
             <table class="table table-striped table-hover">
               <tr>
                 <th>Code</th>
                 <th>Building Name</th>
-                <th></th>
+                <tSh></tSh>
               </tr>
-              <!-- 
+
+              <!--
 
                   Fill in the rest of the table:
                       * populate the rows with the code and name of each listing
                       * include a way to remove individual listings
 
-                --> 
+                -->
+
+              <div ng-repeat="listing in listings" class="col-md-6">
+
+                <th class="code">{{ listing.code }} </th>
+                <th class="name">{{ listing.name }} </th>
+
+                <!-- {{ listing.code }} {{ listing.name }} -->
+                <th class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default" ng-click="deleteListing($index)">Delete</button>
+                </th>
+              </div>
+
             </table>
           </div>
           <!-- 
 
-              Write an HTML form that adds new listings to the directory 
+              Write an HTML form that adds new listings to the directory
 
             -->
+          <label for="basic-url">Location Code</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">XXX:</span>
+            <input type="text" class="form-control" placeholder="Code" aria-describedby="sizing-addon2">
+          </div>
+
+          <label for="basic-url">Location name</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Name:</span>
+            <input type="text" class="form-control" placeholder="Building Name" aria-describedby="sizing-addon2">
+          </div>
+
+          <label for="basic-url">Coordinates</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Latitude</span>
+            <input type="text" class="form-control" placeholder="XX.YYYYYYY" aria-describedby="sizing-addon2">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Longitude</span>
+            <input type="text" class="form-control" placeholder="XX.YYYYYYY" aria-describedby="sizing-addon2">
+          </div>
+
+          <label for="basic-url">Address</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+
+
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
